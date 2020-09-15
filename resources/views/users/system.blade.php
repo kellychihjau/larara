@@ -127,7 +127,7 @@
         <label class="control-label bold">จัดอาหารสำหรับเด็กอายุ 1 - 3 ปี</label>
         <div class="checkbox">
             <input type="checkbox" value="{{ $setting->is_for_big }}" name="is_for_big" {{$setting->is_for_big ? 'checked' : ''}}> 
-            <label>จัดอาหารสำหรับเด็กอายุต่ำกว่า 1 ปี</label>
+            <label>จัดอาหารสำหรับเด็กอายุ 1 - 3 ปี</label>
         </div>
         <label class="control-label bold">จัดอาหารพิเศษสำหรับเด็กอายุ 1 - 3 ปี</label>
 

@@ -122,12 +122,22 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <h4 class="title"> การดื่มนม </h4>
-                            <!-- <div class="update">อัพเดทล่าสุดเมื่อ 2 เดือนที่แล้ว</div> -->
+                            <div class="update">{{$kid->getMilkUpdate()}}</div>
                         </div>
                         <div class="col-lg-4">
-                            <a class="pull-right" data-toggle="modal" data-target="#editMilkForm">
-                                <span> <i class="fas fa-pen"></i> แก้ไข</span>
-                            </a>
+                            <div class="pull-right">
+                                <a class="" data-toggle="modal" data-target="#editMilkForm">
+                                    <span> <i class="fas fa-pen"></i> แก้ไข</span>
+                                </a>
+                                <div class="btn-group open">
+                                    <button data-toggle="dropdown" class="btn btn-outline btn-sm" aria-expanded=""> 
+                                        <span><i class="fas fa-trash"></i> ลบ</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/kid/deletemilk/{{$kid->id}}">ลบออกถาวร</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     @if($kid->milk_oz == null)
@@ -430,7 +440,7 @@
                     <div class="form-group">
                         <label class="control-label">คิดเป็นมิลลิตร (มล.)</label>
                         <div class="">
-                            <input type="number" min="0" id="milk-input-ml" name="ml" step=".01" value="{{$kid->getMilk('ml')}}" class="form-control">
+                            <input type="number" min="0" id="milk-input-ml" name="ml" step="1.0" value="{{$kid->getMilk('ml')}}" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
@@ -574,7 +584,6 @@
                     </div>
                     <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
                     <button class="btn btn-primary" type="submit" name="create" value="">บันทึกการเปลี่ยนแปลง</button>
-                    <button class="btn btn-danger pull-right" type="submit" name="create" value="">ลบออก</button>
                 </form>
             </div>
         </div>
